@@ -1,3 +1,32 @@
+#  _____                _______________________________                  ______
+#  \    \              /    /                    \     \                /     /
+#   \    \            /    /                      \     \              /     /
+#    \    \          /    /_________      _________\     \            /     /
+#     \    \        /    /         |      |         \     \    /\    /     /
+#      \    \      /    /          |      |          \     \  /  \  /     /
+#       \    \    /    /           |      |           \     \/    \/     /
+#        \    \  /    /            |      |            \                /
+#         \    \/    /             |      |             \      /\      /
+#          \        /              |      |              \    /  \    /
+#           \______/               |______|               \__/    \__/
+#   
+#   __________________________________________________________________________                                                       
+#  |                                                                          |
+#  |     Nick Steventon (vtwarrior25)                                         |
+#  |                                                                          | 
+#  |     https://gitlab.com/vtwarrior25                                       |
+#  |     https://github.com/vtwarrior25                                       |
+#  |	 https://<linktothing>       		               		      |
+#  |	 https://<linktothing> 	                              		      |
+#  |									      |
+#  |									      |
+#  |									      |	
+#  |                                                                          |
+#  |__________________________________________________________________________|
+
+
+
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -157,7 +186,7 @@ config push githubrepo $branch && config push gitlabrepo $branch
 # checks if the user is using a system with apt, yum, or pacman,
 # then installs $1 
 
-autoinstallfunc () {
+autoinst () {
 if [ `whereis apt | wc -w` -gt 1 ] 
 then 
 	inst="apt install"
@@ -277,12 +306,16 @@ shopt -s histappend # do not overwrite history
 shopt -s expand_aliases # expand aliases
 
 
+### Auto Install Statements ###
+autoinst exa
+
+
 ### Prompt ###
 PS1="\n \[\033[0;34m\]┌─────(\[\033[1;35m\]\u\[\033[0;34m\])─────(\[\033[1;32m\]\w\[\033[0;34m\]) \n └> \[\033[1;36m\]\$ \[\033[0m\]"
 
 ### Checking if figlet and neofetch are installed
 ### if not, will install them.
-autoinstallfunc toilet 
+autoinst toilet 
 
 ### Toilet aliases ###
 alias toilet="toilet -f big --gay"
