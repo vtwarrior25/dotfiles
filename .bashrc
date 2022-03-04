@@ -132,10 +132,15 @@ apush(){
 echo 'Enter the commit message:'
 read commitMessage
 
-config commit -m "$commitMessage"
+config commit -am "$commitMessage"
 
 echo 'Enter the name of the branch:'
 read branch
+
+if [ $branch == ""]
+then
+	branch="master"
+fi
 
 config push githubrepo $branch && config push gitlabrepo $branch
 
@@ -145,17 +150,20 @@ config push githubrepo $branch && config push gitlabrepo $branch
 # checks if the user is using a system with apt, yum, or pacman,
 # then installs $1 
 
-#function autoinstallfunc {
-#if [ `whereis apt | wc -w` -gt 1 ] then 
-#	inst="apt install"
-#elif [ `whereis yum | wc -w` -gt 1 ] then
-#	inst="yum install"
-#elif [ `whereis pacman | wc -w` -gt 1 ] then
-#	inst="pacman -S"
-#fi
+function autoinstallfunc {
+if [ `whereis apt | wc -w` -gt 1 ] 
+then 
+	inst="apt install"
+elif [ `whereis yum | wc -w` -gt 1 ] 
+then
+	inst="yum install"
+elif [ `whereis pacman | wc -w` -gt 1 ] 
+then
+	inst="pacman -S"
+fi
 
-#$inst $1
-#}
+$inst $1
+}
 
 #----------# ALIASES #----------#
 alias ..='cd ..'
