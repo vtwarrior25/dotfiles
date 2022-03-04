@@ -283,7 +283,6 @@ PS1="\n \[\033[0;34m\]┌─────(\[\033[1;35m\]\u\[\033[0;34m\])──�
 ### Checking if figlet and neofetch are installed
 ### if not, will install them.
 autoinstallfunc toilet 
-autoinstallfunc neofetch
 
 ### Toilet aliases ###
 alias toilet="toilet -f big --gay"
