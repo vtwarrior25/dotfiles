@@ -124,10 +124,38 @@ fi
 
 #----------# FUNCTIONS #----------#
 
+#doinginstallscenario
+
+## function to push to a repo
+
+apush(){
+echo 'Enter the commit message:'
+read commitMessage
+
+config commit -m "$commitMessage"
+
+echo 'Enter the name of the branch:'
+read branch
+
+config push githubrepo $branch && config push gitlabrepo $branch
+
+}
 
 
+# checks if the user is using a system with apt, yum, or pacman,
+# then installs $1 
 
+#function autoinstallfunc {
+#if [ `whereis apt | wc -w` -gt 1 ] then 
+#	inst="apt install"
+#elif [ `whereis yum | wc -w` -gt 1 ] then
+#	inst="yum install"
+#elif [ `whereis pacman | wc -w` -gt 1 ] then
+#	inst="pacman -S"
+#fi
 
+#$inst $1
+#}
 
 #----------# ALIASES #----------#
 alias ..='cd ..'
@@ -186,12 +214,20 @@ alias aptupg="sudo apt upgrade"
 ### System Administration Aliases ###
 alias getusrs="cat /etc/passwd | awk -F ':' '{print $1}'" # this doesn't work correctly, need to fix at some point
 alias bashed="vim ~/.bashrc"
+alias bashld="source .bashrc"
 alias gh="history | grep"
 
 
 ### Git Things ###
 # Git bare repo command
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+## Useful Git Aliases ###
+alias pushhub="config push githubrepo master"
+alias pushlab="config push gitlabrepo master"
+alias pushboth="config push githubrepo master && config push gitlabrepo master"
+
+
 
 ### Export statements ###
 export EDITOR=vim
@@ -224,11 +260,16 @@ shopt -s expand_aliases # expand aliases
 ### Prompt ###
 PS1="\n \[\033[0;34m\]┌─────(\[\033[1;35m\]\u\[\033[0;34m\])─────(\[\033[1;32m\]\w\[\033[0;34m\]) \n └> \[\033[1;36m\]\$ \[\033[0m\]"
 
+### Checking if figlet and neofetch are installed
+### if not, will install them.
+#autoinstallfunc figlet
+#autoinstallfunc neofetch
 
 ### Pretty things at the end of the terminal ###
-neofetch
+#neofetch
 figlet -t "Nice beans"
 figlet -t "Dingo Bongus"
-figlet -t < ~/figletinput.txt 
+figlet -t "Can I draw a penis in here??"
+#figlet -t < ~/figletinput.txt 
 colorscript -r
 
