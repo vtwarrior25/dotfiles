@@ -126,9 +126,40 @@ fi
 
 #doinginstallscenario
 
+
+# penis function
+penisfunction () {
+echo "
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⢉⢉⠉⠉⠻⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠟⠠⡰⣕⣗⣷⣧⣀⣅⠘⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠃⣠⣳⣟⣿⣿⣷⣿⡿⣜⠄⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡿⠁⠄⣳⢷⣿⣿⣿⣿⡿⣝⠖⠄⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⠃⠄⢢⡹⣿⢷⣯⢿⢷⡫⣗⠍⢰⣿⣿⣿⣿⣿
+⣿⣿⣿⡏⢀⢄⠤⣁⠋⠿⣗⣟⡯⡏⢎⠁⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⠄⢔⢕⣯⣿⣿⡲⡤⡄⡤⠄⡀⢠⣿⣿⣿⣿⣿⣿
+⣿⣿⠇⠠⡳⣯⣿⣿⣾⢵⣫⢎⢎⠆⢀⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⠄⢨⣫⣿⣿⡿⣿⣻⢎⡗⡕⡅⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⠄⢜⢾⣾⣿⣿⣟⣗⢯⡪⡳⡀⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⠄⢸⢽⣿⣷⣿⣻⡮⡧⡳⡱⡁⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⡄⢨⣻⣽⣿⣟⣿⣞⣗⡽⡸⡐⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⡇⢀⢗⣿⣿⣿⣿⡿⣞⡵⡣⣊⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡀⡣⣗⣿⣿⣿⣿⣯⡯⡺⣼⠎⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣧⠐⡵⣻⣟⣯⣿⣷⣟⣝⢞⡿⢹⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡆⢘⡺⣽⢿⣻⣿⣗⡷⣹⢩⢃⢿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣷⠄⠪⣯⣟⣿⢯⣿⣻⣜⢎⢆⠜⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⡆⠄⢣⣻⣽⣿⣿⣟⣾⡮⡺⡸⠸⣿⣿⣿⣿
+⣿⣿⡿⠛⠉⠁⠄⢕⡳⣽⡾⣿⢽⣯⡿⣮⢚⣅⠹⣿⣿⣿
+⡿⠋⠄⠄⠄⠄⢀⠒⠝⣞⢿⡿⣿⣽⢿⡽⣧⣳⡅⠌⠻⣿
+⠁⠄⠄⠄⠄⠄⠐⡐⠱⡱⣻⡻⣝⣮⣟⣿⣻⣟⣻⡺⣊
+"
+}
+
+
+
+
 ## function to push to a repo
 
-apush(){
+apush () {
 echo 'Enter the commit message:'
 read commitMessage
 
@@ -150,7 +181,7 @@ config push githubrepo $branch && config push gitlabrepo $branch
 # checks if the user is using a system with apt, yum, or pacman,
 # then installs $1 
 
-function autoinstallfunc {
+autoinstallfunc () {
 if [ `whereis apt | wc -w` -gt 1 ] 
 then 
 	inst="apt install"
@@ -162,7 +193,12 @@ then
 	inst="pacman -S"
 fi
 
-$inst $1
+if [ `whereis $1 | wc -w` -gt 1 ]
+then
+return 2
+fi
+
+sudo $inst $1
 }
 
 #----------# ALIASES #----------#
@@ -222,7 +258,7 @@ alias aptupg="sudo apt upgrade"
 ### System Administration Aliases ###
 alias getusrs="cat /etc/passwd | awk -F ':' '{print $1}'" # this doesn't work correctly, need to fix at some point
 alias bashed="vim ~/.bashrc"
-alias bashld="source .bashrc"
+alias bashld="source ~/.bashrc"
 alias gh="history | grep"
 
 
@@ -270,14 +306,18 @@ PS1="\n \[\033[0;34m\]┌─────(\[\033[1;35m\]\u\[\033[0;34m\])──�
 
 ### Checking if figlet and neofetch are installed
 ### if not, will install them.
-#autoinstallfunc figlet
-#autoinstallfunc neofetch
+autoinstallfunc toilet 
+autoinstallfunc neofetch
+
+### Toilet aliases ###
+alias toilet="toilet -f big --gay"
 
 ### Pretty things at the end of the terminal ###
 #neofetch
-figlet -t "Nice beans"
-figlet -t "Dingo Bongus"
-figlet -t "Can I draw a penis in here??"
-#figlet -t < ~/figletinput.txt 
-colorscript -r
+#toilet -t "Nice beans"
+#toilet -t "Dingo Bongus"
+toilet -t "Can I draw a penis in here??"
+penisfunction
+toilet -t "I guess I can!!" 
+#colorscript -r
 
