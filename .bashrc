@@ -132,13 +132,38 @@ fi
 # export DISPLAY=$DISPLAY
 # export LIBGL_ALWAYS_INDIRECT=1
 
+### bash specific statements ###
+
+### Shopt commands ###
+shopt -s autocd # change to named directory
+shopt -s cdspell # autocorrects cd misspellings
+shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s dotglob
+shopt -s histappend # do not overwrite history
+shopt -s expand_aliases # expand aliases
+shopt -s checkwinsize # checks size of terminal window
+
+
+### Export statements ###
+export EDITOR=vim
+export HISTCONTROL=ignoredupes:erasedups:ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+
+### zsh specific statements ###
+
+
+###########################################################################################
+#-----------------------------------------------------------------------------------------#
+#-----Everything below this line is shell agnostic (works with at least bash and zsh)-----#
+#-----------------------------------------------------------------------------------------#
+###########################################################################################
+
 
 #----------# FUNCTIONS #----------#
 
-#doinginstallscenario
-
-
-# penis function
+# penis function (prints out ascii vector from Despicable Me)
 penisfunction () {
 cat ~/vector100.ansi
 }
@@ -188,6 +213,16 @@ fi
 sudo $inst $1
 }
 
+packstodl=("zoxide" "exa" "toilet" "" "" "" "" "" "" "" "" "" "" "")
+
+installreqs () {
+for prog in packstodl
+do
+	autoinst $prog
+done
+}
+
+
 #----------# ALIASES #----------#
 alias ..='cd ..'
 
@@ -212,7 +247,8 @@ alias weather2='curl v2.wttr.in/05767'
 
 ### WSL Specific Things ###
 alias winhome="cd /mnt/c/Users/cosmi"
-alias gabenewell='cat "/mnt/c/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/gabenewell.cfg"'
+#alias gabenewell='cat "/mnt/c/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/gabenewell.cfg"'
+
 
 ### GNU CoreUtils Aliases ###
 #alias ls='ls -lah'
@@ -224,15 +260,13 @@ alias ps='ps -eaux'
 alias rg='grep'
 
 
-
-
 ### Rust Alternative Aliases ###
 #<<com
 alias ls='exa -lamh --group-directories-first'
 
 
 ### Zoxide Setup Thing ###
-eval "$(zoxide init bash)"
+eval "$(zoxide init bash --cmd cd)"
 #com
 
 
@@ -265,15 +299,6 @@ alias pushlab="config push gitlabrepo master"
 alias pushboth="config push githubrepo master && config push gitlabrepo master"
 
 
-
-### Export statements ###
-export EDITOR=vim
-export HISTCONTROL=ignoredupes:erasedups:ignoreboth
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-
-
 ### yt-dlp commands ###
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 alias yta-best="yt-dlp --extract-audio --audio-format best "
@@ -288,35 +313,23 @@ alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 alias ytdlist="yt-dlp -a ytdlplist.txt"
 
 
-### Shopt commands ###
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
-shopt -s checkwinsize # checks size of terminal window
-
 ### Auto Install Statements ###
-autoinst exa
-
+# autoinst exa
+installreqs
 
 ### Prompt ###
 PS1="\n \[\033[0;34m\]┌─────(\[\033[1;35m\]\u\[\033[0;34m\])─────(\[\033[1;32m\]\w\[\033[0;34m\]) \n └> \[\033[1;36m\]\$ \[\033[0m\]"
 
-### Checking if figlet and neofetch are installed
-### if not, will install them.
-autoinst toilet 
-
-### Toilet aliases ###
-alias toilet="toilet -f big --gay"
 
 ### Pretty things at the end of the terminal ###
 #neofetch
 #toilet -t "Nice beans"
 #toilet -t "Dingo Bongus"
-toilet -t "Can I draw a penis in here??"
-penisfunction
-toilet -t "I guess I can!!" 
+if [ `whereis toilet | wc -w` -gt 1] 
+	alias toilet="toilet -f big --gay"
+	toilet -t "Can I draw a penis in here??"
+	penisfunction
+	toilet -t "I guess I can!!" 
+fi
 #colorscript -r
 
