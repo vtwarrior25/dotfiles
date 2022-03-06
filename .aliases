@@ -36,6 +36,8 @@ echo ".aliases file is loaded!!"
 #-----------------------------------------------------------------------------------------#
 ###########################################################################################
 
+## this is here because otherwise the script doesn't work!! ##
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 #----------# FUNCTIONS #----------#
 
@@ -171,9 +173,6 @@ alias gh="history | grep"
 
 
 ### Git Things ###
-# Git bare repo command
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
 ## Useful Git Aliases ###
 alias pushhub="config push githubrepo master"
 alias pushlab="config push gitlabrepo master"
