@@ -125,12 +125,6 @@ alias weather2='curl v2.wttr.in/05767'
 ### WSL Specific Things ###
 alias winhome="cd /mnt/c/Users/cosmi"
 #alias gabenewell='cat "/mnt/c/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/gabenewell.cfg"'
-alias ema="
-export DISPLAY=$(ip route | awk '/^default/{print $3; exit}'):0.0
-export LIBGL_ALWAYS_INDIRECT=1
-setsid emacs
-"
-    
 
 
 ### GNU CoreUtils Aliases ###
@@ -167,8 +161,10 @@ alias aptupg="sudo apt upgrade"
 
 ### System Administration Aliases ###
 alias getusrs="cat /etc/passwd | awk -F ':' '{print $1}'" # this doesn't work correctly, need to fix at some point
-alias bashed="vim ~/.bashrc"
+alias bashed="$EDITOR ~/.bashrc"
 alias bashld="source ~/.bashrc"
+alias aliased="$EDITOR ~/.aliases"
+alias zshed="$EDITOR ~/.zshrc"
 alias gh="history | grep"
 
 

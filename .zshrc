@@ -1,3 +1,31 @@
+#  _____                _______________________________                  ______
+#  \    \              /    /                    \     \                /     /
+#   \    \            /    /                      \     \              /     /
+#    \    \          /    /_________      _________\     \            /     /
+#     \    \        /    /         |      |         \     \    /\    /     /
+#      \    \      /    /          |      |          \     \  /  \  /     /
+#       \    \    /    /           |      |           \     \/    \/     /
+#        \    \  /    /            |      |            \                /
+#         \    \/    /             |      |             \      /\      /
+#          \        /              |      |              \    /  \    /
+#           \______/               |______|               \__/    \__/
+#   
+#   __________________________________________________________________________                                                       
+#  |                                                                          |
+#  |     Nick Steventon (vtwarrior25)                                         |
+#  |                                                                          | 
+#  |     https://gitlab.com/vtwarrior25                                       |
+#  |     https://github.com/vtwarrior25                                       |
+#  |	 https://<linktothing>       		               		      |
+#  |	 https://<linktothing> 	                              		      |
+#  |									      |
+#  |									      |
+#  |									      |	
+#  |                                                                          |
+#  |__________________________________________________________________________|
+
+
+
 zstyle ':znap:*' repos-dir ~/.oh-my-zsh/znap
 source ~/zsh-snap/znap.zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
