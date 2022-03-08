@@ -1,0 +1,65 @@
+#!/bin/bash
+#  _____                _______________________________                  ______
+#  \    \              /    /                    \     \                /     /
+#   \    \            /    /                      \     \              /     /
+#    \    \          /    /_________      _________\     \            /     /
+#     \    \        /    /         |      |         \     \    /\    /     /
+#      \    \      /    /          |      |          \     \  /  \  /     /
+#       \    \    /    /           |      |           \     \/    \/     /
+#        \    \  /    /            |      |            \                /
+#         \    \/    /             |      |             \      /\      /
+#          \        /              |      |              \    /  \    /
+#           \______/               |______|               \__/    \__/
+#   
+#   __________________________________________________________________________                                                       
+#  |                                                                          |
+#  |     Nick Steventon (vtwarrior25)                                         |
+#  |                                                                          | 
+#  |     https://gitlab.com/vtwarrior25                                       |
+#  |     https://github.com/vtwarrior25                                       |
+#  |	 https://<linktothing>       		               		      |
+#  |	 https://<linktothing> 	                              		      |
+#  |									      |
+#  |									      |
+#  |									      |	
+#  |                                                                          |
+#  |__________________________________________________________________________|
+
+# This script will automatically install all of the programs that I use and need.
+# The idea behind this script is to setup a new machine on a new install of Linux quickly and automatically.
+# Most of the work is just apt, yum, or pacman installing the applications.
+typ=0
+
+packmancheck () {
+if [ `whereis apt | wc -w` -gt 1 ] 
+then 
+	inst="apt install"
+	typ=1 
+elif [ `whereis yum | wc -w` -gt 1 ] 
+then
+	inst="yum install"
+	typ=3
+elif [ `whereis pacman | wc -w` -gt 1 ] 
+then
+	inst="pacman -S"
+	typ=2
+fi
+}
+
+installedchecker(){
+if [ `whereis $1 | wc -w` -gt 1 ]
+then
+return 2
+fi
+sudo $inst $1
+}
+
+packstodl=("zoxide" "exa" "toilet" "" "" "" "" "" "" "" "" "" "" "")
+
+installreqs () {
+for prog in packstodl
+do
+	autoinst $prog
+done
+}
+

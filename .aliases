@@ -132,7 +132,7 @@ alias winhome="cd /mnt/c/Users/cosmi"
 #alias ll='ls -alF'
 #alias la='ls -A'
 #alias l='ls -CF'
-
+#alias lg="ls -la | grep"
 alias ps='ps -eaux'
 alias rg='grep'
 
@@ -140,7 +140,7 @@ alias rg='grep'
 ### Rust Alternative Aliases ###
 #<<com
 alias ls='exa -lamh --group-directories-first'
-
+alias lg='exa -lamh --group-directories-first | grep'
 
 ### Zoxide Setup Thing ###
 eval "$(zoxide init bash --cmd cd)"
@@ -166,6 +166,14 @@ alias bashld="source ~/.bashrc"
 alias aliased="$EDITOR ~/.aliases"
 alias zshed="$EDITOR ~/.zshrc"
 alias gh="history | grep"
+
+lastten () {
+cat $1 | tail -n 10
+}
+
+firstten () {
+cat $1 | head -n 10
+}
 
 
 ### Git Things ###
@@ -209,6 +217,4 @@ then
 	toilet -t "I guess I can!!" 
 fi
 #colorscript -r
-
-
 
