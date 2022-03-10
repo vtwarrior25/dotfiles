@@ -1,0 +1,35 @@
+### This document contains a list of common commands and their most useful flags.
+
+ls
+
+  ls -lah
+    -l: long form
+    -a: all files, including hidden files
+    -h: human readable file sizes
+  
+  ls -lahtr
+    -l: long form
+    -a: all files, including hidden files
+    -h: human readable file sizes
+    -t: sort by time accessed
+    -r: reverse order
+
+  ls -lah --group-directories-first
+    -l: long form
+    -a: all files, including hidden files
+    -h: human readable file sizes
+    --group-directories-first: groups directories first in the listing
+
+
+ps
+
+
+
+cat
+
+
+du
+  du -chs
+    -c: produce a grand total 
+    -h: human readable
+    -s: summarize

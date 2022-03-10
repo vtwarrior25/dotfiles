@@ -16,11 +16,11 @@
 #  |                                                                          | 
 #  |     https://gitlab.com/vtwarrior25                                       |
 #  |     https://github.com/vtwarrior25                                       |
-#  |	 https://<linktothing>       		               		      |
-#  |	 https://<linktothing> 	                              		      |
-#  |									      |
-#  |									      |
-#  |									      |	
+#  |	 https://<linktothing>       		               		                      |
+#  |	 https://<linktothing> 	                              		              |
+#  |									                                                        |
+#  |									                                                        |
+#  |									                                                        |	
 #  |                                                                          |
 #  |__________________________________________________________________________|
 
@@ -54,8 +54,6 @@ fi
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
-
-colorprompt=yes
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -109,7 +107,7 @@ shopt -s checkwinsize # checks size of terminal window
 
 
 ### Export statements ###
-export EDITOR=vim
+export EDITOR=nvim
 export HISTCONTROL=ignoredupes:erasedups:ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
