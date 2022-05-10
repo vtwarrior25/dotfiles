@@ -57,7 +57,7 @@ config commit -am "$commitMessage"
 echo 'Enter the name of the branch:'
 read branch
 
-if [ $branch == "" ]
+if [ $branch == " " ]
 then
 	branch="master"
 fi
