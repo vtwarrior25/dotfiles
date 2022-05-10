@@ -26,10 +26,16 @@ ps
 
 
 cat
-
+  cat -n
+    -n: number all lines
+     
 
 du
   du -chs
     -c: produce a grand total 
     -h: human readable
     -s: summarize
+
+
+
+
