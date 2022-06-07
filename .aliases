@@ -138,13 +138,12 @@ alias rg='grep'
 
 
 ### Rust Alternative Aliases ###
-#<<com
+
 alias ls='exa -lamh --group-directories-first'
 alias lg='exa -lamh --group-directories-first | grep'
 
 ### Zoxide Setup Thing ###
 eval "$(zoxide init bash --cmd cd)"
-#com
 
 
 ### Apt Aliases ###

@@ -112,6 +112,9 @@ export HISTCONTROL=ignoredupes:erasedups:ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+### startup sounds (just for a test) 
+
+
 ### Execute the .aliases file ###
 . ~/.aliases
 
