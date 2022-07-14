@@ -111,6 +111,7 @@ export EDITOR=nvim
 export HISTCONTROL=ignoredupes:erasedups:ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
+HISTTIMEFORMAT="%Y-%m-%d %T "
 
 ### startup sounds (just for a test) 
 
