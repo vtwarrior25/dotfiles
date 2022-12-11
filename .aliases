@@ -90,10 +90,11 @@ fi
 sudo $inst $1
 }
 
-packstodl=("zoxide" "exa" "toilet" "" "" "" "" "" "" "" "" "" "" "")
+packstodl="$HOME/.packstodl"
+#packstodl=("zoxide" "exa" "toilet" "" "" "" "" "" "" "" "" "" "" "")
 
 installreqs () {
-for prog in packstodl
+for prog in $packstodl
 do
 	autoinst $prog
 done
