@@ -107,7 +107,7 @@ shopt -s checkwinsize # checks size of terminal window
 
 
 ### Export statements ###
-export EDITOR=nvim
+export EDITOR=vim
 export HISTCONTROL=ignoredupes:erasedups:ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000

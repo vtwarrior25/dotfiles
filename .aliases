@@ -164,17 +164,25 @@ alias bashed="$EDITOR ~/.bashrc"
 alias bashld="source ~/.bashrc"
 alias aliased="$EDITOR ~/.aliases"
 alias zshed="$EDITOR ~/.zshrc"
-alias gh="history | grep"
+#alias gh="history | grep"
 #alias vim="nvim"
-alias pids="ps eax | awk '{printf "%s -- %s\n", $1, $5}'"
-alias spids="ps eax | awk '{printf "%s -- %s\n", $1, $5}' | grep"
+#alias pids="ps eax | awk '{printf '%s -- %s\n', $1, $5}'"
+#alias spids="ps eax | awk '{printf '%s -- %s\n', $1, $5}' | grep"
+
+#pids () {
+#  ps eax | awk '{printf "%s -- %s\n", $1, $5}'
+#}
+#
+#spids () {
+#  ps eax | awk '{printf "%s -- %s\n", $1, $5}' | grep
+#}
 
 last20 () {
-tail -n 20 < $1
+  tail -n 20 < $1
 }
 
 first20 () {
-head -n 20 < $1
+  head -n 20 < $1
 }
 
 ### Git Things ###

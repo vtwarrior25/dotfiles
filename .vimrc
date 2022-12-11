@@ -16,7 +16,7 @@ set showcmd
 set showmatch
 set hlsearch
 set history=1000
-
+set noerrorbells
 
 " Wildmenu
 set wildmenu
@@ -26,9 +26,17 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Formatting things
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 set expandtab
+set smartindent
+set autoindent
+
 colorscheme elflord
 
 
 " Key Binds
 
+
+
+" Macros
+let @c = "0i#j"
