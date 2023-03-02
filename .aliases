@@ -129,21 +129,21 @@ alias weather2='curl v2.wttr.in/05767'
 
 
 ### GNU CoreUtils Aliases ###
-#alias ls='ls -lah'
-#alias ll='ls -alF'
-#alias la='ls -A'
-#alias l='ls -CF'
-#alias lg="ls -la | grep"
+alias ls='ls -lah'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lg="ls -la | grep"
 alias ps='ps -eux'
 alias rg='grep'
 
 
 ### Rust Alternative Aliases ###
-alias ls='exa -lamh --group-directories-first'
-alias lg='exa -lamh --group-directories-first | grep'
+#alias ls='exa -lamh --group-directories-first'
+#alias lg='exa -lamh --group-directories-first | grep'
 
 ### Zoxide Setup Thing ###
-eval "$(zoxide init bash --cmd cd)"
+#eval "$(zoxide init bash --cmd cd)"
 
 
 ### Apt Aliases ###
@@ -193,37 +193,35 @@ alias pushboth="config push githubrepo master && config push gitlabrepo master"
 
 
 ### yt-dlp commands ###
-alias yta-aac="yt-dlp --extract-audio --audio-format aac "
-alias yta-best="yt-dlp --extract-audio --audio-format best "
-alias yta-flac="yt-dlp --extract-audio --audio-format flac "
-alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-alias yta-opus="yt-dlp --extract-audio --audio-format opus "
-alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
-alias yta-wav="yt-dlp --extract-audio --audio-format wav "
+#alias yta-aac="yt-dlp --extract-audio --audio-format aac "
+#alias yta-best="yt-dlp --extract-audio --audio-format best "
+#alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+#alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
+#alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+#alias yta-opus="yt-dlp --extract-audio --audio-format opus "
+#alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
+#alias yta-wav="yt-dlp --extract-audio --audio-format wav "
 
-alias ytv-best="yt-dlp -f bestvideo+bestaudio "
-alias ytdlist="yt-dlp -a ytdlplist.txt"
+#alias ytv-best="yt-dlp -f bestvideo+bestaudio "
+#alias ytdlist="yt-dlp -a ytdlplist.txt"
 
 
 ### Auto Install Statements ###
 # autoinst exa
 # installreqs
 
-### Prompt ###
-PS1="\n \[\033[0;34m\]┌─────(\[\033[1;35m\]\u\[\033[0;34m\])─────(\[\033[1;32m\]\w\[\033[0;34m\]) \n └> \[\033[1;36m\]\$ \[\033[0m\]"
 
 ### Pretty things at the end of the terminal ###
 #neofetch
 #toilet -t "Nice beans"
 #toilet -t "Dingo Bongus"
 #alias toilet="toilet -f big --gay"
-if [ $(whereis toilet | wc -w) -gt 1 ]
-then 
-	alias toilet="toilet -f big --gay"
-	toilet -t "Can I draw a penis in here??"
-	penisfunction
-	toilet -t "I guess I can!!" 
-fi
+#if [ $(whereis toilet | wc -w) -gt 1 ]
+#then 
+#	alias toilet="toilet -f big --gay"
+#	toilet -t "Can I draw a penis in here??"
+#	penisfunction
+#	toilet -t "I guess I can!!" 
+#fi
 #colorscript -r
 
