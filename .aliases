@@ -225,3 +225,4 @@ alias pushboth="config push githubrepo master && config push gitlabrepo master"
 #fi
 #colorscript -r
 
+penisfunction
