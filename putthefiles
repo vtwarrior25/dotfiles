@@ -1,0 +1,2 @@
+# This script puts the dotfiles in your home directory, using interactive cp
+cp -i .aliases .bashrc .vimrc .zshrc vector100.ansi ~
