@@ -115,6 +115,8 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 
 ### startup sounds (just for a test) 
 
+### Prompt ###
+PS1="\n \[\033[0;34m\]┌─────(\[\033[1;35m\]\u\[\033[0;34m\])─────(\[\033[1;32m\]\w\[\033[0;34m\]) \n └> \[\033[1;36m\]\$ \[\033[0m\]"
 
 ### Execute the .aliases file ###
 . ~/.aliases
