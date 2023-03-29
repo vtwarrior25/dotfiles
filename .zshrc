@@ -16,11 +16,11 @@
 #  |                                                                          |
 #  |     https://gitlab.com/vtwarrior25                                       |
 #  |     https://github.com/vtwarrior25                                       |
-#  |	 https://<linktothing>       		               		              |
-#  |	 https://<linktothing> 	                              		          |
-#  |									                                      |
-#  |									                                      |
-#  |									                                      |
+#  |     https://<linktothing>                                                |
+#  |     https://<linktothing>                                                |
+#  |                                                                          |
+#  |                                                                          |
+#  |                                                                          |
 #  |                                                                          |
 #  |__________________________________________________________________________|
 
