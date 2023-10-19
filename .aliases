@@ -139,8 +139,11 @@ alias rg='grep'
 
 
 ### Rust Alternative Aliases ###
-#alias ls='exa -lamh --group-directories-first'
-#alias lg='exa -lamh --group-directories-first | grep'
+if [ $(whereis toilet | wc -w) -gt 1 ]
+then
+	alias ls='exa -lamh --group-directories-first'
+	alias lg='exa -lamh --group-directories-first | grep'
+fi
 
 ### Zoxide Setup Thing ###
 #eval "$(zoxide init bash --cmd cd)"
