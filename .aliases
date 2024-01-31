@@ -129,7 +129,7 @@ alias weather2='curl v2.wttr.in/05767'
 
 
 ### GNU CoreUtils Aliases ###
-alias ls='ls -lah --group-directories-first'
+alias ls='ls -lah --group-directories-first --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
