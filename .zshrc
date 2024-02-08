@@ -12,7 +12,7 @@
 #   
 #   __________________________________________________________________________ 
 #  |                                                                          |
-#  |     Nick Steventon (vtwarrior25)                                         |
+#  |     vtwarrior25                                                          |
 #  |                                                                          |
 #  |     https://gitlab.com/vtwarrior25                                       |
 #  |     https://github.com/vtwarrior25                                       |
