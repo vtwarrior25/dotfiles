@@ -47,58 +47,6 @@ cat ~/vector100.ansi
 }
 
 
-## function to push to a repo
-apush () {
-echo 'Enter the commit message:'
-read commitMessage
-
-config commit -am "$commitMessage"
-
-echo 'Enter the name of the branch:'
-read branch
-
-if [ "$branch" == " " ]
-then
-	branch="master"
-fi
-
-config push githubrepo $branch && config push gitlabrepo $branch
-
-}
-
-
-# checks if the user is using a system with apt, yum, or pacman,
-# then installs $1 
-
-autoinst () {
-  if [ $(whereis apt | wc -w) -gt 1 ] 
-then 
-	inst="apt install"
-elif [ $(whereis yum | wc -w) -gt 1 ] 
-then
-	inst="yum install"
-elif [ $(whereis pacman | wc -w) -gt 1 ] 
-then
-	inst="pacman -S"
-fi
-
-if [ $(whereis $1 | wc -w) -gt 1 ]
-then
-return 2
-fi
-
-sudo $inst $1
-}
-
-packstodl="$HOME/.packstodl"
-#packstodl=("zoxide" "exa" "toilet" "" "" "" "" "" "" "" "" "" "" "")
-
-installreqs () {
-for prog in $packstodl
-do
-	autoinst $prog
-done
-}
 
 
 #----------# ALIASES #----------#
@@ -123,11 +71,6 @@ alias weather='curl wttr.in/05767'
 alias weather2='curl v2.wttr.in/05767'
 
 
-### WSL Specific Things ###
-#alias winhome="cd /mnt/c/Users/cosmi"
-#alias gabenewell='cat "/mnt/c/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/gabenewell.cfg"'
-
-
 ### GNU CoreUtils Aliases ###
 alias ls='ls -lah --group-directories-first --color=auto'
 alias ll='ls -alF'
@@ -136,17 +79,6 @@ alias l='ls -CF'
 alias lg="ls -la | grep"
 alias ps='ps -eux'
 alias rg='grep'
-
-
-### Rust Alternative Aliases ###
-if [ $(whereis toilet | wc -w) -gt 1 ]
-then
-	alias ls='exa -lamh --group-directories-first'
-	alias lg='exa -lamh --group-directories-first | grep'
-fi
-
-### Zoxide Setup Thing ###
-#eval "$(zoxide init bash --cmd cd)"
 
 
 ### Apt Aliases ###
@@ -162,7 +94,6 @@ alias aptupg="sudo apt upgrade"
 
 
 ### System Administration Aliases ###
-alias getusrs="cat /etc/passwd | awk -F ':' '{print $1}'" # this doesn't work correctly, need to fix at some point
 alias bashed="$EDITOR ~/.bashrc"
 alias bashld="source ~/.bashrc"
 alias aliased="$EDITOR ~/.aliases"
@@ -188,30 +119,5 @@ first20 () {
   head -n 20 < $1
 }
 
-### Git Things ###
-## Useful Git Aliases ###
-alias pushhub="config push githubrepo master"
-alias pushlab="config push gitlabrepo master"
-alias pushboth="config push githubrepo master && config push gitlabrepo master"
-
-
-### Auto Install Statements ###
-# autoinst exa
-# installreqs
-
-
-### Pretty things at the end of the terminal ###
-#neofetch
-#toilet -t "Nice beans"
-#toilet -t "Dingo Bongus"
-#alias toilet="toilet -f big --gay"
-#if [ $(whereis toilet | wc -w) -gt 1 ]
-#then 
-#	alias toilet="toilet -f big --gay"
-#	toilet -t "Can I draw a penis in here??"
-#	penisfunction
-#	toilet -t "I guess I can!!" 
-#fi
-#colorscript -r
 
 penisfunction
